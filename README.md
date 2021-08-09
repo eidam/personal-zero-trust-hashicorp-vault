@@ -2,7 +2,7 @@
 
 Secrets are hard, especially for local development. This is why I took two of my favorite products 
 ([Cloudflare For Teams](https://www.cloudflare.com/teams/) and [HashiCorp Vault](https://www.vaultproject.io/))
-and used them together to come up with a Zero-Trust Vault deployment that is easy to use from any of my work stations.
+and used them together to come up with a Zero-Trust Vault deployment that is easy to use from any of my workstations.
 
 The focus was to achieve fast deployment and easy maintenance. Terraform takes care of the full deployment, and the full stack is deployed with two `terraform apply` commands, everything is configured and ready to go within minutes. 
 
