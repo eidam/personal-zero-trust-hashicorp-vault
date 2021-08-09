@@ -2,26 +2,26 @@
 
 Secrets are hard, especially for local development. This is why I took two of my favorite products 
 ([Cloudflare For Teams](https://www.cloudflare.com/teams/) and [HashiCorp Vault](https://www.vaultproject.io/))
-and used them together to come up with a Zero-Trust deployment that is easy to use from any of my machines.
+and used them together to come up with a Zero-Trust Vault deployment that is easy to use from any of my work stations.
 
-The focus was to achieve fast deployment and easy maintenance. Terraform takes care of the full deployment, and the full stack is deployed with two `terraform apply` commands. Everything is ready to go within minutes. 
+The focus was to achieve fast deployment and easy maintenance. Terraform takes care of the full deployment, and the full stack is deployed with two `terraform apply` commands, everything is configured and ready to go within minutes. 
 
-## TLDR Stack 
-- Terraform putting everything together ❤️
-- Cloudflare for Teams
-    - Cloudflare Tunnel
-    - Cloudflare Access
-        - Vault UI
-        - SSH Web Terminal
-        - JWT Auth backend
-    - Cloudflare WARP to private network (through Tunnel)
-- Google Cloud Platform
-    - GCE Instance
-    - GCS Bucket
-    - Secret Manager
-    - (optional) KMS
+## TLDR Stack
+- **Terraform** putting everything together ❤️
+- **Cloudflare for Teams**
+    - **Cloudflare Tunnel** _(exposing Vault, SSH to internet)_
+    - **Cloudflare Access**
+        - Vault UI _(generic Cloudflare Access app)_
+        - SSH Web Terminal _(SSH access to GCE instance)_
+        - JWT Auth backend _(Vault auth)_
+    - **Cloudflare WARP** to private network (through Tunnel)
+- **Google Cloud Platform**
+    - **GCE Instance** _(with deny-all incoming traffic)_
+    - **GCS Bucket** _(Vault storage)_
+    - **Secret Manager** _(Cloudflare Tunnel credentials store)_
+    - _(optional)_ **KMS** _(for Vault auto-unseal)_
 
-## Costs
+## Estimated Costs
 ### Cloudflare 
 Free. _(for up to 50 users)_
 
@@ -56,3 +56,4 @@ Please refer to [vault-config folder](./vault-config/)
 ## Couple of notes
 - Cloudflare Teams tunnels IP routes are Terraformed using REST provider, this will be changed to official cloudflare provider once supported.
 - OIDC auth flow or automatic WARP auth to get the JWT token would be better, this will be implemented if and once supported.
+- Why? You may ask. The next step is to configure my local development to load ENV variables based on the project directory.
