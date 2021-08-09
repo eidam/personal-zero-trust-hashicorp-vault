@@ -12,7 +12,7 @@ The focus was to achieve fast deployment and easy maintenance. Terraform takes c
     - Cloudflare Tunnel
     - Cloudflare Access
         - Vault UI
-        - Web Terminal SSH
+        - SSH Web Terminal
         - JWT Auth backend
     - Cloudflare WARP to private network (through Tunnel)
 - Google Cloud Platform
