@@ -51,4 +51,4 @@ In order to deploy this stack, make sure you have:
 Please refer to [infra folder](./infra/)
 
 ### 3. Vault configuration
-Please refer to [infra folder](./vault-config/)
+Please refer to [vault-config folder](./vault-config/)
