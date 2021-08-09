@@ -52,3 +52,7 @@ Please refer to [infra folder](./infra/)
 
 ### 3. Vault configuration
 Please refer to [vault-config folder](./vault-config/)
+
+## Couple of notes
+- Cloudflare Teams tunnels IP routes are Terraformed using REST provider, this will be changed to official cloudflare provider once supported.
+- OIDC auth flow or automatic WARP auth to get the JWT token would be better, this will be implemented if and once supported.
